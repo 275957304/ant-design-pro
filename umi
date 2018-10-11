@@ -1,0 +1,25 @@
+umi 是蚂蚁金服的底层前端框架，已直接或间接地服务了数百个应用，包括 java、node、H5 无线、离线（Hybrid）应用、纯前端 assets 应用、CMS 应用等。它已经很好地服务了我们的内部用户，同时希望它也能服务好外部用户。
+它包含以下特性：
+
+📦 开箱即用，内置 react、react-router 等
+🏈 类 next.js 且功能完备的路由约定，同时支持配置的路由方式
+🎉 完善的插件体系，覆盖从源码到构建产物的每个生命周期
+🚀 高性能，通过插件支持 PWA、以路由为单元的 code splitting 等
+💈 支持静态页面导出，适配各种环境，比如中台业务、无线业务、egg、支付宝钱包、云凤蝶等
+🚄 开发启动快，支持一键开启 dll 和 hard-source-webpack-plugin 等
+🐠 一键兼容到 IE9，基于 umi-plugin-polyfills
+🍁 完善的 TypeScript 支持，包括 d.ts 定义和 umi test
+🌴 与 dva 数据流的深入融合，支持 duck directory、model 的自动加载、code splitting 等等
+🐱‍ 支持组件按需加载
+
+在 pro 中我们提供了一些封装更加高级的组件，在 V2 中我们还提供了按需加载功能，只要在 babel-plugin-import 做如下配置：
+{
+    libraryName: 'ant-design-pro',
+    libraryDirectory: 'lib',
+    style: true,
+    camel2DashComponentName: false,
+}
+  
+就可以像 antd 一样使用 pro 组件，我们强烈推荐这种方式，可以显著减少包大小。
+import { Result } from 'ant-design-pro';
+ReactDOM.render(<Result type="success" />, mountNode);
